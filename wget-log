@@ -1,0 +1,59 @@
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:57:21--  (try:10)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:57:32--  (try:11)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:57:42--  (try:12)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:57:58--  (try:13)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:58:08--  (try:14)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:58:19--  (try:15)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:58:29--  (try:16)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:58:40--  (try:17)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:58:50--  (try:18)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:59:01--  (try:19)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Retrying.
+
+--2019-10-02 16:59:31--  (try:20)  http://www.baidu.com/
+Connecting to 127.0.0.1:8118... connected.
+Proxy request sent, awaiting response... No data received.
+Giving up.
+
