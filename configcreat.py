@@ -75,10 +75,14 @@ def vmess_config(s):
 	
 		address = address[1].split('"') 
 		port = s.split('port": "')
-		port = port[1].split('"')
+		if(len(port)==1):
+			port = port[0].split('port":')
+			port = port[1].split(',')
+		else:
+			port = port[1].split('"')
 		Host = s.split('host": "') 
 		Host = Host[1].split('"') 
-		id = s.split('id": "') 
+		id = s.split('"id": "') 
 		id = id[1].split('"') 
 		path = s.split('path": "') 
 		path = path[1].split('"') 
@@ -94,10 +98,14 @@ def vmess_config(s):
 		address = s.split('add":"') 
 		address = address[1].split('"') 
 		port = s.split('port":"')
-		port = port[1].split('"')
+		if(len(port)==1):
+			port = port[0].split('port":')
+			port = port[1].split(',')
+		else:
+			port = port[1].split('"')
 		Host = s.split('host":"') 
 		Host = Host[1].split('"') 
-		id = s.split('id":"') 
+		id = s.split('"id":"')
 		id = id[1].split('"') 
 		path = s.split('path":"') 
 		path = path[1].split('"') 
