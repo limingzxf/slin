@@ -4,6 +4,7 @@ import dealNode
 import list_node
 import delNode
 import bookurl
+import ping
 def picture():
 		print ("(  ____ \( \      \__   __/( (    /|  ")
 		print ("| (    \/| (         ) (   |  \  ( |  ")
@@ -17,9 +18,10 @@ def picture():
 def help():
 		picture()
 		print ("sliny version 1.1  ( author:dawn)")
-		print("usage: python3 main.py -h  [help] /i [init] /-s [stop]")
-		print("usage: python3 main.py -N  [Node] <Node> /-d [del Node number] /-b [url]")
-		print("usage: python3 main.py -l  [list of ssrNode] |-r [run] <list> /-s [stop]")
+		print("usage: python3 main.py -h  [help] /i [init] /-s [stop] /-p <ping default all>")
+		print("usage: python3 main.py -N  [Node] <Node> /-d [del Node number] /-b [book url]")
+		print("usage: python3 main.py -l  [list of Node] |-r [run] <list> /-s [stop] /-p <ping num>")
+
 		
 def main():
 	if len(sys.argv)==1:	
@@ -27,6 +29,9 @@ def main():
 	elif len(sys.argv)==2:
 		if sys.argv[1] == "-h":
 			help()
+		if sys.argv[1] == "-p":
+			picture()
+			ping.pingall()
 		elif sys.argv[1] == "-l":
 			picture()
 			list_node.node_list()
@@ -87,6 +92,9 @@ def main():
 					os.system("bash runandstop.sh rs")
 				if flag == "v2ray":
 					os.system("bash runandstop.sh rv")
+			elif sys.argv[2] == "-p":
+				picture()
+				ping.pinchoice(sys.argv[3])
 			
 
 main()
