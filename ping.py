@@ -1,14 +1,14 @@
 import os
 
-def get_ping_result(ip_address):
-	ping="ping"+"  "+ip_address+" -c 1"
+def get_ping_result():
+	ping="httping -x 127.0.0.1:10808 -g http://www.google.com -5 -c 2"
 	p = os.popen(ping)
-	spilted = p.read().split('time=') 
+	spilted = p.read().split('max =') 
 	if(len(spilted)==1):
 		spilted="time out"
 		return spilted
 	else:
-		spilted = spilted[1].split('ms') 
+		spilted = spilted[1].split('/') 
 		return spilted[0]+"ms"
 
 
@@ -34,7 +34,7 @@ def pingall():
 					ipaddress = spilted[solverange].split('server": \"')
 					ipaddress = ipaddress[1].split('",')
 					print ("-----------------------------")
-					print ("* "+str(i)+ ". "+ipaddress[0] + "     "+get_ping_result(ip_address[0]))
+					print ("* "+str(i)+ ". "+ipaddress[0] + "     "+get_ping_result())
 			
 			
 			employee_file.close()
@@ -49,16 +49,23 @@ def pingall():
 					sp_vm = em_vm.split('//') 
 				
 				for ip_list in range(0,len(sp_vm)):
+					os.system("sudo systemctl stop v2ray")
 					i = i+1
 					solve_range = ip_list
 					ip_address = sp_vm[solve_range].split('"address":"')
 					ip_address = ip_address[1].split('"')
 					print ("-----------------------------")
-					print ("* "+str(i)+ ". "+ip_address[0] +"       "+str(get_ping_result(ip_address[0])))
+					employee_filebychoice = open("/etc/v2ray/config.json", "w")
+					employee_filebychoice.write(sp_vm[ip_list])
+				
+					employee_filebychoice.close()
+					
+					os.system("sudo systemctl restart v2ray")
+					 
+					print ("* "+str(i)+ ". "+ip_address[0] +"       "+str(get_ping_result()))
 	
 			print ("-----------------------------")    
-		
-		
+
 			employee_vmess.close()
 
 	
@@ -84,7 +91,7 @@ def pinchoice(num):
 							ipaddress = spilted[choosenodenum-1].split('server": \"')
 							ipaddress = ipaddress[1].split('",')
 							print ("-----------------------------")
-							print ("* "+str(num)+ ". "+ipaddress[0] + "    "+get_ping_result(ip_address[0]))
+							print ("* "+str(num)+ ". "+ipaddress[0] + "    "+str(get_ping_result()))
 					print ("-----------------------------")
 							
 							
@@ -103,15 +110,20 @@ def pinchoice(num):
 						vm_list=(len(spilted))+1	
 						
 						for ipaddresschoose in range(0,len(sp_vm)):
+							os.system("sudo systemctl stop v2ray")
 							ipaddresschoose = ipaddresschoose +vm_list	
 							if choosenodenum == ipaddresschoose:    
 								ip_address=sp_vm[choosenodenum-vm_list].split('"address":"')
 								ip_address = ip_address[1].split('"')
 								print ("-----------------------------")
-								print ("* "+str(num)+ ". "+ip_address[0] +"       "+str(get_ping_result(ip_address[0])))
-								
-							
-						
+								employee_filebychoice = open("/etc/v2ray/config.json", "w")
+								employee_filebychoice.write(sp_vm[ip_list])
+				
+								employee_filebychoice.close()
+					
+								os.system("sudo systemctl restart v2ray")
+								print ("* "+str(num)+ ". "+ip_address[0] +"       "+str(get_ping_result()))
+	
 					print ("-----------------------------")
 
 			
